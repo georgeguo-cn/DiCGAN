@@ -2,7 +2,6 @@
     @Time   : 2020.01.16
     @Author : Zhiqiang Guo
     @Email  : zhiqiangguo@hust.edu.cn
-    This is a file about evaluation.
     This file is the run file. It contains some arguments and train processing.
 """
 

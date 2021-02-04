@@ -1,9 +1,9 @@
-'''
+"""
     @Time   : 2020.01.16
     @Author : Zhiqiang Guo
     @Email  : zhiqiangguo@hust.edu.cn
     the model of DiCGAN
-'''
+"""
 
 import tensorflow as tf
 
