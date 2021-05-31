@@ -3,19 +3,19 @@
 This is my Tensorflow implementation for the paper:
 >Zhiqiang Guo, Chaoyang Wang, Jianjun Li, Guohui Li, Peng Pan(2020). DiCGAN: A Dilated Convolutional Generative Adversarial Network for Recommender Systems, [Paper in Springer](https://link.springer.com/chapter/10.1007/978-3-030-73200-4_18). In DASFAA 2020.
 
-## run configuration.
+## Configuration.
 
 We run this code on the follwing hardware configuration:
-*CPU: Intel Core i7-6850K 3.60GHz, 6 core
-*GPU: NVIDIA Titan Xp (11G x 2)
-*CUDA: cudatoolkit9.0
-*cudnn: cudnn7.6.5
+* CPU: Intel Core i7-6850K 3.60GHz, 6 core
+* GPU: NVIDIA Titan Xp (11G x 2)
+* CUDA: cudatoolkit9.0
+* cudnn: cudnn7.6.5
 
 The required packages are as follows:
-*Python  == 3.6.8
-*TensorFlow-gpu == 1.15.0
+* Python  == 3.6.8
+* TensorFlow-gpu == 1.15.0
 
-## dataset.
+## Dataset.
 You can download CiaoDVD dataset from "https://www.librec.net/datasets.html" and Amazon dataset from "http://jmcauley.ucsd.edu/data/amazon/" respectively.
 
 For each dataset, we hold the first 80% items in each user's interaction as the training set, and the remaining 20% items are used as the test set.
@@ -25,7 +25,7 @@ So, you need run the file 'preprocessing.py' to get the train set, test set, tes
 python preprocessing.py
 ```
 
-## run DiCGAN.
+## Run.
 
 You can train our model by running "python main.py" with default parameters.
 ```
