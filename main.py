@@ -38,7 +38,7 @@ if __name__ == '__main__':
     parser.add_argument('--negative_rate', type=int, default=0.01)
     parser.add_argument('--drop_rate', type=float, default=0.5)
     parser.add_argument('--is_attention', type=bool, default=True)
-    parser.add_argument('--is_store', type=bool, default=True)
+    parser.add_argument('--is_store', type=bool, default=False)
     parser.add_argument('--pre_train', type=bool, default=False)
     parser.add_argument('--checkpoint_dir', type=str, default='save/' + filename + '/')
     config = parser.parse_args()
