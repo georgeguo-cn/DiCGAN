@@ -31,7 +31,7 @@ if __name__ == '__main__':
     parser.add_argument('--L', type= int, default=100)
     parser.add_argument('--percentage', type=float, default=0.8)
     parser.add_argument('--emb_len', type=int, default=64)
-    parser.add_argument('--kernel_size', type=int, default=[3,3,5,6,5,4,3])   # L=10, k=[2,3,3], d=[1,2,1]  #L=50, k=[3,3,4,4,3], d=[1,2,4,5,3], L=150, k=[3,3,5,6,5,4,3],d=[1,2,4,6,4,3,1]
+    parser.add_argument('--kernel_size', type=int, default=[3,3,5,6,5,4,3])   # L=10, k=[2,3,3], d=[1,2,1]  #L=50, k=[3,3,4,4,3], d=[1,2,4,5,3], L=100, k=[3,3,5,6,5,4,3],d=[1,2,4,6,4,3,1]
     parser.add_argument('--dilations', type=list, default=[1,2,4,6,4,3,1])
     parser.add_argument('--causal', type=bool, default=True)
     parser.add_argument('--loss_type', type=str, default='gan')
