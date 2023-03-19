@@ -225,7 +225,7 @@ class DiCGAN(object):
             y, _, W, b = self.fc_layer(y, h, h, activation, "dis", layer + 1, is_train)
 
         # hidden -> output
-        y, _, W, b = self.fc_layer(y, h, h, "none", "dis", h_layers, is_train)
+        y, _, W, b = self.fc_layer(y, h, 1, "none", "dis", h_layers, is_train)
 
         return y
 
