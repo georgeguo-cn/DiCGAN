@@ -158,32 +158,32 @@ if __name__ == '__main__':
 
                 print('Epoch:{}, epoch_G:{}, G_loss:{}, G_time:{}'.format(epoch, epoch_G, G_loss, time() - t1))
 
-                if epoch % 1 == 0:
-                    t2 = time()
-                    HR, Prec, Recall, F1, NDCG, MAP = evaluate_ranking(model, sess, train, test, negdata, user_set, k_list=k_list)
-                    test_log = ''
-                    for k in range(len(k_list)):
-                        test_log = test_log + 'epoch:%d, top%d, precision:%.6f, recall:%.6f, ndcg:%.6f\n' % (step, k_list[k], Prec[k], Recall[k], NDCG[k])
-                        fw.write(test_log)
+            if epoch % 1 == 0:
+                t2 = time()
+                HR, Prec, Recall, F1, NDCG, MAP = evaluate_ranking(model, sess, train, test, negdata, user_set, k_list=k_list)
+                test_log = ''
+                for k in range(len(k_list)):
+                    test_log = test_log + 'epoch:%d, top%d, precision:%.6f, recall:%.6f, ndcg:%.6f\n' % (step, k_list[k], Prec[k], Recall[k], NDCG[k])
+                    fw.write(test_log)
 
-                        if Prec[k] > Best_Prec[k]:
-                            Best_HR[k] = HR[k]
-                            Best_Prec[k] = Prec[k]
-                            Best_Recall[k] = Recall[k]
-                            Best_F1[k] = F1[k]
-                            Best_NDCG[k] = NDCG[k]
-                            best_epoch[k] = epoch + 1
+                    if Prec[k] > Best_Prec[k]:
+                        Best_HR[k] = HR[k]
+                        Best_Prec[k] = Prec[k]
+                        Best_Recall[k] = Recall[k]
+                        Best_F1[k] = F1[k]
+                        Best_NDCG[k] = NDCG[k]
+                        best_epoch[k] = epoch + 1
 
-                            flag[k] = 0
-                            if config.pre_train == True and config.is_store == False:
-                                ckpt_path = config.checkpoint_dir + 'model_' + '.ckpt'
-                                model.saver.save(sess, ckpt_path, global_step=epoch)
-                                print("model saved to {}".format(ckpt_path))
-                        else:
-                            flag[k] += 1
-                    print(test_log)
-                    print('not increased: ', flag)
-                    fw.flush()
+                        flag[k] = 0
+                        if config.pre_train == True and config.is_store == False:
+                            ckpt_path = config.checkpoint_dir + 'model_' + '.ckpt'
+                            model.saver.save(sess, ckpt_path, global_step=epoch)
+                            print("model saved to {}".format(ckpt_path))
+                    else:
+                        flag[k] += 1
+                print(test_log)
+                print('not increased: ', flag)
+                fw.flush()
 
             # early stop
             if min(flag) >= 50:
